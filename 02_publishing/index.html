@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>챙겨줘 - 챙구 추천</title>
+<style>
+body { font-family: sans-serif; padding: 2rem; background: #f8f8f8; }
+h1 { color: #333; }
+label { display: block; margin-top: 1rem; font-weight: bold; }
+select, button { padding: 0.5rem; font-size: 1rem; margin-top: 0.5rem; }
+button { cursor: pointer; }
+#result { margin-top: 2rem; }
+
+.changu-card {
+max-width: 480px;
+background: #ffffff;
+border-radius: 12px;
+box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+padding: 1.5rem;
+position: relative;
+font-size: 1rem;
+line-height: 1.5;
+}
+.changu-card::before {
+content: "";
+position: absolute;
+bottom: -12px;
+left: 32px;
+border-width: 12px 12px 0;
+border-style: solid;
+border-color: #ffffff transparent transparent;
+display: block;
+width: 0;
+}
+.changu-face {
+font-size: 2rem;
+margin-bottom: 0.5rem;
+}
+.changu-meta {
+font-size: 0.85rem;
+color: #666;
+margin-bottom: 0.5rem;
+}
+.changu-message {
+font-size: 1.05rem;
+color: #333;
+}
+
+.changu-product-name,
+.changu-product-price {
+font-weight: 500;
+margin-top: 0.8rem;
+}
+
+.changu-disclaimer {
+font-size: 0.75rem;
+color: #777;
+margin-top: 0.3rem;
+}
+
+@keyframes bounceEffect {
+0%, 100% {
+transform: translateY(0);
+}
+50% {
+transform: translateY(-8px);
+}
+}
+.bounce {
+animation: bounceEffect 0.6s ease-in-out;
+}
+.changu-product-name,
+.changu-product-price {
+font-weight: 500;
+margin-top: 0.8rem;
+}
+.changu-disclaimer {
+font-size: 0.75rem;
+color: #777;
+margin-top: 0.3rem;
+}
+</style>
+</head>
+<body>
+<h1>🤖 챙구가 오늘의 메뉴를 추천해줄게요!</h1>
+
+<label for="condition">오늘의 상태는?</label>
+<select id="condition">
+<option value="피곤함">피곤함</option>
+<option value="귀찮음">귀찮음</option>
+<option value="우울함">우울함</option>
+<option value="돈 없음">돈 없음</option>
+<option value="배고픔">배고픔</option>
+<option value="귀여움 인정 받고 싶음">귀여움 인정 받고 싶음</option>
+</select>
+
+<label for="menuType">먹고 싶은 메뉴 느낌은?</label>
+<select id="menuType">
+<option value="도시락류">도시락류</option>
+<option value="삼각김밥">삼각김밥</option>
+<option value="샌드위치">샌드위치</option>
+<option value="샐러드">샐러드</option>
+<option value="디저트">디저트</option>
+<option value="고기류">고기류</option>
+<option value="컵밥">컵밥</option>
+<option value="햄버거">햄버거</option>
+<option value="파스타">파스타</option>
+<option value="잡채">잡채</option>
+<option value="카레">카레</option>
+<option value="비빔밥">비빔밥</option>
+<option value="돈까스">돈까스</option>
+<option value="두부면">두부면</option>
+<option value="또띠아">또띠아</option>
+</select>
+
+<button id="recommendBtn">챙구야, 추천해줘!</button>
+
+<div id="result"></div>
+
+<script src="./js/changuDialogues.js"></script>
+<script src="./js/changu.js"></script>
+<script src="./js/product_data.js"></script>
+</body>
+</html>

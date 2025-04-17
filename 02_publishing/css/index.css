@@ -25,17 +25,17 @@
     padding: 2rem;
     background: #9e78cd url(../img/bg_top.png) no-repeat center 100%/100% auto;
     position: relative;
-    overflow: hidden;
+    
   }
   h1::after{
     content: " ";
     display: block;
     position: absolute;
-    bottom: -20px;
-    left: 20px;
-    background: url(../img/character.png) no-repeat 0 0 / 100px auto;
-    width: 100px;
-    height: 100px;
+    bottom: -12px;
+    left: 90px;
+    background: url(../img/character.png) no-repeat 0 0 / 100% auto;
+    width: 90px;
+    height: 90px;
   }
 
   label {
@@ -202,6 +202,10 @@
     font-size: 0.75rem;
     color: #999;
     margin-top: 0.5rem;
+  }
+  .product-brand{
+    font-weight: normal;
+    color: #000;
   }
   
   /* ----------------------------------------

@@ -55,21 +55,25 @@ function createChanguCard(data, product) {
     card.appendChild(msg);
   
     if (product) {
-      const productName = document.createElement("div");
-      productName.className = "changu-product-name mayo";
-      productName.innerText = `🍱 추천 메뉴: ${product.name}`;
-  
-      const productPrice = document.createElement("div");
-      productPrice.className = "changu-product-price";
-      productPrice.innerText = `💸 가격: ${product.price.toLocaleString()}원`;
-  
-      const disclaimer = document.createElement("div");
-      disclaimer.className = "changu-disclaimer";
-      disclaimer.innerText = "*편의점 별 할인 적용이 상이할 수 있습니다.";
-  
-      card.appendChild(productName);
-      card.appendChild(productPrice);
-      card.appendChild(disclaimer);
+        const brandName = document.createElement("div");
+        brandName.className = "changu-brand-name";
+
+        const productName = document.createElement("div");
+        productName.className = "changu-product-name mayo";
+        productName.innerHTML = `추천 메뉴: ${product.name} <span class="product-brand"> (${product.brand})</span>`;
+    
+        const productPrice = document.createElement("div");
+        productPrice.className = "changu-product-price";
+        productPrice.innerText = `💸 가격: ${product.price.toLocaleString()}원`;
+    
+        const disclaimer = document.createElement("div");
+        disclaimer.className = "changu-disclaimer";
+        disclaimer.innerText = "*편의점 별 할인 적용이 상이할 수 있습니다.";
+        
+        card.appendChild(brandName);
+        card.appendChild(productName);
+        card.appendChild(productPrice);
+        card.appendChild(disclaimer);
     }
   
     return card;

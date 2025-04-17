@@ -1,12 +1,3 @@
-
-// const changuDialogues = [
-//     { condition: "피곤함", menu_type: "도시락류", message: "출근 10분 전 인간 A님의 얼굴, 충전 7%입니다. 밥이 충전기니까 도시락으로 부팅하시죠." },
-//     { condition: "귀찮음", menu_type: "샌드위치", message: "포장도 뜯기 쉽고, 젓가락도 필요 없는 샌드위치. 귀찮음 만렙인 인간 A님을 위한 헌정 메뉴입니다." },
-//     { condition: "우울함", menu_type: "샐러드", message: "우울할 땐 초록색. 풀떼기라도 씹으면 ‘난 뭔가 챙기고 있다’는 위안이 생기죠." },
-//     { condition: "돈 없음", menu_type: "김밥", message: "계란마요 = 월말의 친구. 한 입이면 '그래도 먹고는 산다'는 위로가 따라옵니다." },
-//     { condition: "배고픔", menu_type: "파스타", message: "탄수화물 급구 상태 감지됨. 지금은 이성과 철학보다 면발이 필요합니다." },  
-//   ];
-
 const changuDialogues = [
     {
       "condition": "피곤함",
@@ -3507,5 +3498,41 @@ const changuDialogues = [
         "condition": "귀여움 인정 받고 싶음",
         "menu_type": "샐러드",
         "message": "챙구는 감정이 없습니다. 하지만 귀여움 인정 받고 싶음인 인간 A님을 보자니... 샐러드 밖엔 할 말이 없네요."
+      },
+      {
+        "condition": "귀찮음",
+        "menu_type": "핫바",
+        "message": "손도 안 쓰고 먹고 싶은 마음, 제가 압니다. 집앞 편의점 핫바 존이 당신의 도피처."
+      },
+      {
+        "condition": "우울함",
+        "menu_type": "핫바",
+        "message": "기분이 안 좋아도 핫바는 따뜻해요. 괜히 어묵국물 마시듯 위로받는 느낌… 나만 그래요?"
+      },
+      {
+        "condition": "우울함",
+        "menu_type": "핫바",
+        "message": "눈물은 짜고 핫바는 짭짤하다. 오늘은 핫바에 감정을 말아먹읍시다."
+      },      
+      {
+        "condition": "피곤함",
+        "menu_type": "핫바",
+        "message": "에너지가 부족할 땐 핫바 한 입이 전지충전이죠. 휴먼 배터리 충전중…"
+      },
+      {
+        "condition": "돈 없음",
+        "menu_type": "핫바",
+        "message": "작고 소중한 핫바 하나면, 오늘 하루도 어찌저찌 살아지잖아요."
+      },
+      {
+        "condition": "귀여움 인정 받고 싶음",
+        "menu_type": "핫바",
+        "message": "귀여운 얼굴로 핫바 뜯는 나, 생각보다 귀엽지 않나요? (본인 기준)"
+      },
+      {
+        "condition": "귀여움 인정 받고 싶음",
+        "menu_type": "핫바",
+        "message": "핫바 하나 사서 애기처럼 들고 다니면 그게 바로 귀여움이쥬."
       }
+      
   ];

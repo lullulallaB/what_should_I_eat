@@ -1,0 +1,253 @@
+/* ----------------------------------------
+🎨 색상 변수 정의 (테마 컬러)
+---------------------------------------- */
+:root {
+    --deep_purple: #6912c5;    /* 기본 보라색 */
+    --deep_yellow: #f4d03f;    /* 강조 노란색 */
+    --check_color: #ffe082;    /* 체크 시 배경 */
+  }
+  
+  /* ----------------------------------------
+  🔧 기본 리셋 & 바디 스타일
+  ---------------------------------------- */
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: sans-serif;
+    background: #8a63bb;
+  }
+  h1 {
+    color: #fff;
+    min-height: 300px;
+    padding: 2rem;
+    background: #9e78cd url(../img/bg_top.png) no-repeat center 100%/100% auto;
+    position: relative;
+    overflow: hidden;
+  }
+  h1::after{
+    content: " ";
+    display: block;
+    position: absolute;
+    bottom: -20px;
+    left: 20px;
+    background: url(../img/character.png) no-repeat 0 0 / 100px auto;
+    width: 100px;
+    height: 100px;
+  }
+
+  label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #fff;
+  }
+  select, button {
+    padding: 0.5rem;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+  button {
+    cursor: pointer;
+  }
+  #result {
+    margin-top: 2rem;
+  }
+
+  /* ----------------------------------------
+  🔧 레이아웃
+  ---------------------------------------- */
+  
+.container{
+    max-width: 1024px;
+    width: 100%;
+    margin: auto;
+  }
+
+  .content{
+    padding: 2rem;
+    background: url(../img/bg_bottom.png) no-repeat center -9px/100% auto;
+  }
+  
+  .ctg{
+    margin-top: 20px;
+  }
+  
+  /* ----------------------------------------
+  🎯 감정/메뉴 선택 버튼 (.feeling-buttons)
+  ---------------------------------------- */
+  .feeling-buttons label {
+    display: inline-block;
+    margin: 6px 4px;
+    padding: 12px 18px;
+    background-color: var(--deep_purple);
+    color: white;
+    border: 2px solid var(--deep_purple);
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .feeling-buttons input[type="radio"] {
+    display: none;
+  }
+  
+  .feeling-buttons label:hover {
+    background-color: white;
+    color: var(--deep_purple);
+    border-color: var(--deep_purple);
+    box-shadow: 0 0 6px rgba(180, 167, 232, 0.3);
+  }
+  
+  .feeling-buttons label:active {
+    background-color: #ffe1a3;
+    transform: scale(0.98);
+  }
+  
+  .feeling-buttons input[type="radio"]:checked + label {
+    background-color: var(--check_color);
+    color: var(--deep_purple);
+    border-color: var(--deep_yellow);
+    transform: scale(1.05);
+  }
+  
+  /* ----------------------------------------
+  🚀 추천 버튼 (.recommend-btn)
+  ---------------------------------------- */
+  .recommend-btn {
+    margin-top: 20px;
+    padding: 16px 0;
+    width: 100%;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid var(--deep_purple);
+    border-radius: 16px;
+    background-color: white;
+    color: var(--deep_purple);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+  }
+  .recommend-btn:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  }
+  .recommend-btn:active {
+    background-color: #7564B0;
+    transform: scale(0.97);
+  }
+  
+  /* ----------------------------------------
+  🃏 카드 스타일 (.changu-card)
+  ---------------------------------------- */
+  .changu-card {
+    max-width: 480px;
+    margin: 20px auto;
+    padding: 1.5rem;
+    border-radius: 18px;
+    background-color: #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    font-size: 1rem;
+    line-height: 1.6;
+    animation: cardPopIn 0.4s ease-out;
+    transform-origin: top center;
+    position: relative;
+  }
+  .changu-card::before {
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 36px;
+    border-width: 12px 12px 0;
+    border-style: solid;
+    border-color: #ffffff transparent transparent;
+    width: 0;
+  }
+  
+  /* 감정별 배경 */
+  .changu-card.tired     { background-color: #e0f7fa; }
+  .changu-card.lazy      { background-color: #e1e1e1; }
+  .changu-card.depressed { background-color: #e1bee7; }
+  .changu-card.broke     { background-color: #fff3cd; }
+  .changu-card.hungry    { background-color: #ffe0e0; }
+  .changu-card.cute      { background-color: #ffe4ec; }
+  
+  /* 카드 내부 구성 */
+  .changu-face {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  .changu-meta {
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 0.3rem;
+  }
+  .changu-message {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  .changu-product-name,
+  .changu-product-price {
+    font-weight: bold;
+    margin-top: 0.5rem;
+  }
+  .changu-disclaimer {
+    font-size: 0.75rem;
+    color: #999;
+    margin-top: 0.5rem;
+  }
+  
+  /* ----------------------------------------
+  ✨ 애니메이션 효과
+  ---------------------------------------- */
+  @keyframes cardPopIn {
+    0%   { transform: scale(0.9) translateY(20px); opacity: 0; }
+    100% { transform: scale(1) translateY(0); opacity: 1; }
+  }
+  @keyframes bounceEffect {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-8px); }
+  }
+  .bounce {
+    animation: bounceEffect 0.6s ease-in-out;
+  }
+  
+  @keyframes shakeText {
+    0% { transform: translate(0, 0); }
+    20% { transform: translate(-1px, 1px); }
+    40% { transform: translate(2px, -1px); }
+    60% { transform: translate(-2px, 2px); }
+    80% { transform: translate(1px, -2px); }
+    100% { transform: translate(0, 0); }
+  }
+  .shake {
+    animation: shakeText 0.6s ease-in-out;
+  }
+  
+  /* ----------------------------------------
+  🍳 특수 효과 (스팸/마요 강조)
+  ---------------------------------------- */
+  .mayo {
+    background: repeating-linear-gradient(
+      45deg,
+      #fff9c4,
+      #fff9c4 4px,
+      #ffecb3 4px,
+      #ffecb3 8px
+    );
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-weight: bold;
+    color: #663c00;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+    display: inline-block;
+    margin-top: 0.5rem;
+  }
+  
